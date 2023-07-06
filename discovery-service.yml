@@ -1,0 +1,34 @@
+server:
+  port: 8090
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+#    fetchRegistry: false
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  output:
+    ansi:
+      enabled: always
+
+  boot:
+    admin:
+      context-path: /admin  #A different context path for Spring boot admin server has been provided avoiding conflict with eureka
+#      routes:
+#        endpoints: '*' #env, metrics, trace, jolokia, info, configprops
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0
+#  endpoints:
+#    web:
+#      exposure:
+#      include: '*'
+#  endpoint:
+#    health:
+#      show-details: always

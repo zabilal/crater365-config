@@ -1,0 +1,56 @@
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/
+    healthcheck:
+      enabled: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+springdoc:
+  packagesToScan: com.gloomme.authservice
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/crater365-users?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: ''
+
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+
+  profiles:
+    active: dev
+
+#  output:
+#    ansi:
+#      enabled: always
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+ipi:
+  auth:
+    jwtExpirationMs: 86400000
+    jwtSecret: ipiPLeaseGloomNotSecretTryAKeytHome
+
+microservice:
+  security:
+    salt: WZeBXmCI9cAz3LyY9Sdllj9l5iPsXC
