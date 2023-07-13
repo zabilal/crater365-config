@@ -18,8 +18,9 @@ springdoc:
 spring:
   datasource:
     url: jdbc:mysql://host.docker.internal:3306/crater365-organizations
-    username: root
-    password: ''
+    url: https://crater365.net:3306/crater365-organizations
+    username: usecrateipi
+    password: Yh21!9208hsT
 
   jpa:
     database: mysql
