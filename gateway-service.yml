@@ -68,7 +68,7 @@ springdoc:
         url: /v3/api-docs/employee
       - name: department
         url: /v3/api-docs/department
-      - name: organization
+      - name: org
         url: /v3/api-docs/organization
       - name: auth
         url: /v3/api-docs/auth
