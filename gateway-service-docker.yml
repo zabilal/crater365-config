@@ -5,13 +5,19 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discovery-service:32771/eureka/
+  instance:
+    prefer-ip-address: 'true'
 
 logging:
+  org.springframework.cloud.gateway: DEBUG
+  reactor.netty.http.client: DEBUG
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
 
 
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
   output:
     ansi:
       enabled: always
