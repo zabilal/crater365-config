@@ -41,7 +41,7 @@ spring:
         predicates:
         - Path=/organization/**
         filters:
-        - RewritePath=/org/(?<path>.*), /$\{path}
+        - RewritePath=/organization/(?<path>.*), /$\{path}
       - id: auth-service
         uri: lb://auth-service
         predicates:
